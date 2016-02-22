@@ -1,6 +1,6 @@
 {
-    "name": "laravel/lumen",
-    "description": "The Laravel Lumen Framework.",
+    "name": "hyancat/iHub",
+    "description": "A Image Hub.",
     "keywords": ["framework", "laravel", "lumen"],
     "license": "MIT",
     "type": "project",
