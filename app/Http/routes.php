@@ -12,3 +12,5 @@
 */
 
 $app->get('/', ['as' => 'index', 'uses' => 'IndexController@index']);
+
+$app->post('/upload', ['as' => 'upload', 'uses' => 'IndexController@upload']);

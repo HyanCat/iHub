@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "autoprefixer": "^6.3.3",
+    "gulp": "^3.9.1",
+    "laravel-elixir": "^5.0.0"
+  },
+  "devDependencies": {
+    "laravel-elixir-livereload": "^1.1.4"
+  }
+}
