@@ -103,7 +103,7 @@
 				previewTemplate             : $('#dropzonePreviewTemplate').html(),
 				init                        : function () {
 					this.on('success', function (file, responsedObject) {
-						var fileUrl                                      = responsedObject.message;
+						var fileUrl                                      = responsedObject.message.file;
 						file.previewElement.querySelector('input').value = fileUrl;
 						file.previewElement.querySelector('.clip').setAttribute('data-clipboard-text', fileUrl);
 						file.previewElement.querySelector('[data-dz-pixel]').innerHTML = file.width + ' x ' + file.height;

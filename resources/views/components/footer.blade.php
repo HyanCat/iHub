@@ -9,5 +9,10 @@
 ?>
 
 <footer class="center aligned gray text">
-	Copyright © 2016 iHub. Powered by <a href="">iHub</a>.
+	<div class="ui section divider"></div>
+	<div class="copyright">
+		Copyright © 2016 iHub. Powered by
+		<a href="https://github.com/HyanCat/iHub" target="_blank">iHub</a>
+		.
+	</div>
 </footer>

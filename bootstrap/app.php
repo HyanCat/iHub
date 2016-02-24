@@ -75,6 +75,7 @@ $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 
 $app->configure('app');
+$app->configure('oss');
 
 /*
 |--------------------------------------------------------------------------

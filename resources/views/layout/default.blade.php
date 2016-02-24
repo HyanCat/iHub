@@ -24,13 +24,10 @@
 
 	@yield('header')
 
-	<div class="body container">
-		<div class="main-section container">
-			@yield('content')
-		</div>
+	<div class="main-section container">
+		@yield('content')
 	</div>
 
-	<div class="ui section divider"></div>
 
 	@yield('footer')
 

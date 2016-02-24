@@ -9,9 +9,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\OssService;
 use Illuminate\Support\Facades\Request;
-use OSS\Core\OssException;
-use OSS\OssClient;
 
 class IndexController extends Controller
 {
@@ -22,19 +21,9 @@ class IndexController extends Controller
 
 	public function upload()
 	{
-		$file            = Request::file('file');
-		$accessKeyId     = env('OSS_ACCESSKEY');
-		$accessKeySecret = env('OSS_ACCESSKEY_SECRET');
-		$endpoint        = 'https://' . (env('OSS_INTERNAL', false) ? env('OSS_SERVER_INTERNAL') : env('OSS_SERVER'));
-		$bucket          = env('OSS_BUCKET');
-		$object          = 'test/test_' . md5_file($file->getPathname()) . '.' . $file->getClientOriginalExtension();
-		try {
-			$ossClient = new OssClient($accessKeyId, $accessKeySecret, $endpoint);
-			$ossClient->uploadFile($bucket, $object, $file->getPathname());
-		} catch (OssException $e) {
-			print $e->getMessage();
-		}
+		$file    = Request::file('file');
+		$ossFile = app(OssService::class)->upload($file);
 
-		return response(['message' => $endpoint . '/' . $bucket . '/' . $object]);
+		return response(['status_code' => 200, 'message' => ['file' => $ossFile]]);
 	}
 }

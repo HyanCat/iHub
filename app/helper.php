@@ -31,3 +31,28 @@ if (! function_exists('elixir')) {
 		throw new InvalidArgumentException("File {$file} not defined in asset manifest.");
 	}
 }
+
+if (! function_exists('path_join')) {
+	/**
+	 * join file path or url path
+	 * @return string
+	 */
+	function path_join()
+	{
+		$args  = func_get_args();
+		$paths = [];
+		foreach ($args as $arg) {
+			$paths = array_merge($paths, (array)$arg);
+		}
+		$paths = array_map(function ($p, $k) {
+			if ($k == 0) {
+				return rtrim($p, "/");
+			}
+			else {
+				return trim($p, "/");
+			}
+		}, $paths, array_keys($paths));
+
+		return join('/', $paths);
+	}
+}

@@ -8,7 +8,7 @@
  */
 ?>
 
-<!DOCTYPE html>
+		<!DOCTYPE html>
 <html lang="zh_CN">
 <head>
 	<meta charset="UTF-8">
@@ -28,7 +28,9 @@
 </head>
 <body>
 
-@yield('base-body')
+<div class="body container">
+	@yield('base-body')
+</div>
 
 <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
 
