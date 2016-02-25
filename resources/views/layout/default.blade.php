@@ -11,7 +11,7 @@
 @extends('layout.base')
 
 @section('base-title')
-	{{ config('app.name') }} -- @yield('title')
+	@yield('title') {{ config('app.name') }}
 @stop
 
 @section('base-style')

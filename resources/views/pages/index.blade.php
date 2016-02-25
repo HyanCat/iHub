@@ -10,10 +10,6 @@
 
 @extends('layout.default')
 
-@section('title')
-	iHub 图床
-@stop
-
 @section('style')
 	<link href="{{ elixir('css/app.css') }}" rel="stylesheet">
 @stop
@@ -22,7 +18,7 @@
 	<header class="ui vertical masthead center aligned segment">
 		<div class="ui invert text container">
 			<div class="ui inverted header">
-				<h1 class="title">图床</h1>
+				<h1 class="title">{{ config('app.name') }}</h1>
 			</div>
 		</div>
 	</header>
