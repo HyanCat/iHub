@@ -56,3 +56,20 @@ if (! function_exists('path_join')) {
 		return join('/', $paths);
 	}
 }
+
+if (! function_exists('route_https')) {
+	/**
+	 * Generate a URL to a named route and check if it use https.
+	 * @param       $name
+	 * @param array $parameters
+	 * @return mixed|string
+	 */
+	function route_https($name, $parameters = [])
+	{
+		if (env('APP_HTTPS')) {
+			return str_replace('http', 'https', route($name, $parameters));
+		}
+
+		return route($name, $parameters);
+	}
+}

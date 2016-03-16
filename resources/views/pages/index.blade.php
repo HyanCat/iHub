@@ -25,7 +25,7 @@
 @stop
 
 @section('content')
-	<div action="{{ route('upload') }}" class="dropzone" id="iHubDropzone">
+	<div action="{{ route_https('upload') }}" class="dropzone" id="iHubDropzone">
 	</div>
 	<div id="dropzonePreviewTemplate" style="display: none;">
 		<div class="dz-preview dz-file-preview">
